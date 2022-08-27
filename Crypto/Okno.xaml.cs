@@ -22,8 +22,6 @@ namespace Crypto
         public Okno()
         {
             this.InitializeComponent();
-
-            
         }
       
 

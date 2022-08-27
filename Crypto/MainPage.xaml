@@ -9,16 +9,16 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-
+        <TextBlock x:Name="errorText" Foreground="Red" TextAlignment="Center" VerticalAlignment="Center">
+        </TextBlock> 
+        
         <ScrollViewer>
             <StackPanel x:Name="coinsTopPanel" HorizontalAlignment="Center" Width="100">
-                
             </StackPanel>
         </ScrollViewer>
 
 
-        <RelativePanel>
+        <RelativePanel> 
             <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets" FontSize="36"
                     Content="&#xE700;" Click="HamburgerButton_Click"/>
