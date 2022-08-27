@@ -13,7 +13,7 @@
         </TextBlock> 
         
         <ScrollViewer>
-            <StackPanel x:Name="coinsTopPanel" HorizontalAlignment="Center" Width="100">
+            <StackPanel x:Name="coinsTopPanel" HorizontalAlignment="Center" Width="100" Spacing="20">
             </StackPanel>
         </ScrollViewer>
 

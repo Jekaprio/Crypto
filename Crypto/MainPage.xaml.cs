@@ -1,9 +1,9 @@
-﻿using RestSharp;
+﻿using Crypto.model;
+using Newtonsoft.Json;
+using RestSharp;
 using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Newtonsoft.Json;
-using Crypto.model;
 
 namespace Crypto
 {
@@ -13,10 +13,10 @@ namespace Crypto
 
         public MainPage()
         {
-            this.InitializeComponent();
-            this.getCoinList();
-            this.sortCoinList();
-            this.showCoinsTop();    
+            InitializeComponent();
+            getCoinList();
+            sortCoinList();
+            showCoinsTop();
         }
 
         private void getCoinList()
@@ -24,13 +24,13 @@ namespace Crypto
             try
             {
                 string url = "https://api.coincap.io/v2/assets";
-                var client = new RestClient(url);
-                var request = new RestRequest();
-                var response = client.Get(request);
-                this._cryptoCoinList = JsonConvert.DeserializeObject<CryptoCoinList>
+                RestClient client = new RestClient(url);
+                RestRequest request = new RestRequest();
+                RestResponse response = client.Get(request);
+                _cryptoCoinList = JsonConvert.DeserializeObject<CryptoCoinList>
                                        (response.Content.ToString()).data;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 errorText.Text = "Error initialization: Check your the Internet connection";
             }
@@ -38,21 +38,25 @@ namespace Crypto
 
         private void sortCoinList()
         {
-            Array.Sort(this._cryptoCoinList,
+            Array.Sort(_cryptoCoinList,
                       delegate (CryptoCoinData x, CryptoCoinData y) { return x.rank.CompareTo(y.rank); });
         }
 
         private void showCoinsTop()
         {
-            var topLength = 10;
-            if(this ._cryptoCoinList.Length <10)
+            int number = 1;   
+            int topLength = 10;
+            if (_cryptoCoinList.Length < 10)
             {
-                topLength = this._cryptoCoinList.Length;
+                topLength = _cryptoCoinList.Length;
             }
-            for (var i = 0; i < topLength; i++)
+            for (int i = 0; i < topLength; i++)
             {
-                TextBox coinInfo = new TextBox();
-                coinInfo.Text = this._cryptoCoinList[i].name;
+                TextBlock coinInfo = new TextBlock()
+                {
+                    Text = ($"{number++}.{_cryptoCoinList[i].name}")
+                    
+                };
                 coinsTopPanel.Children.Add(coinInfo);
             }
         }
@@ -71,17 +75,17 @@ namespace Crypto
         {
             if (home.IsSelected)
             {
-                myFrame.Navigate(typeof(MainPage));
+                _ = myFrame.Navigate(typeof(MainPage));
                 TitleTextBlock.Text = "Home";
             }
-           /* else if ()
-            {
+            /* else if ()
+             {
 
-            }
-            else if ()
-            {
+             }
+             else if ()
+             {
 
-            }*/
+             }*/
         }
     }
 
