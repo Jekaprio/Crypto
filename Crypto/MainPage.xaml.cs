@@ -1,6 +1,5 @@
 ﻿using Crypto.model;
-using Newtonsoft.Json;
-using RestSharp;
+using Crypto.services;
 using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -10,6 +9,8 @@ namespace Crypto
     public sealed partial class MainPage : Page
     {
         private CryptoCoinData[] _cryptoCoinList = Array.Empty<CryptoCoinData>();
+
+        private readonly APIService _APIService = new APIService();
 
         public MainPage()
         {
@@ -23,26 +24,21 @@ namespace Crypto
         {
             try
             {
-                string url = "https://api.coincap.io/v2/assets";
-                RestClient client = new RestClient(url);
-                RestRequest request = new RestRequest();
-                RestResponse response = client.Get(request);
-                _cryptoCoinList = JsonConvert.DeserializeObject<CryptoCoinList>
-                                       (response.Content.ToString()).data;
+                _cryptoCoinList = _APIService.getCoinList();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                errorText.Text = "Error initialization: Check your the Internet connection";
+                errorText.Text = e.Message;
             }
         }
 
         private void sortCoinList()
         {
             Array.Sort(_cryptoCoinList,
-                      delegate (CryptoCoinData x, CryptoCoinData y) 
-                      { return x.rank.CompareTo(y.rank);});
+                      delegate (CryptoCoinData x, CryptoCoinData y)
+                      { return x.rank.CompareTo(y.rank); });
         }
-      
+
         private void showCoinsTop()
         {
             int number = 1;
@@ -55,7 +51,7 @@ namespace Crypto
             {
                 TextBlock coinInfo = new TextBlock()
                 {
-                    Text = $"{number++}.{_cryptoCoinList[i].name}"
+                    Text = $"{number++}.{_cryptoCoinList[i]}"
 
                 };
                 coinsTopPanel.Children.Add(coinInfo);

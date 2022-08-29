@@ -130,6 +130,7 @@
       <DependentUpon>convert_crypto.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="services\APIService.cs" />
     <Compile Include="setting.xaml.cs">
       <DependentUpon>setting.xaml</DependentUpon>
     </Compile>

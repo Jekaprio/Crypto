@@ -9,14 +9,31 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Name="TitleTextConvert" 
+                       FontSize="28" FontWeight="ExtraBlack"  Margin="80,5,350,180" Text="Convert" />
+
+        <TextBlock Name="about_Convert" 
+                       FontSize="20" Margin="80,55,80,55" TextWrapping="Wrap"
+                   Text="Hello! Welcome to the page of conversion of various cryptocurrencies. To convert, select cryptocurrency 1 and cryptocurrency 2 and click convert.
+                   
+                   
+                   *note that the commission is not taken into account."/>
+
+        <ComboBox x:Name="crypto_list1"  Header="Change your coin 1"  Margin="80,250,0,0" HorizontalAlignment="Left">
+        </ComboBox>
+        <ComboBox x:Name="crypto_list2" Header="Change your coin 2"  Margin="0,250,125,0" HorizontalAlignment="Right"/>
+
         <RelativePanel>
             <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets" FontSize="36"
                     Content="&#xE700;" Click="HamburgerButton_Click"/>
         </RelativePanel>
 
-        <SplitView Name="mySplitView" Grid.Row="1" OpenPaneLength="200">
+        <SplitView Name="mySplitView" OpenPaneLength="200">
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
                     <ListBoxItem Name="about_crypto">

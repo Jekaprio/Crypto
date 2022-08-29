@@ -23,6 +23,7 @@ namespace Crypto
             if (about_crypto.IsSelected)
             {
                 _ = Frame_Convert.Navigate(typeof(MainPage));
+                
             
             }
             else if (convert.IsSelected)
@@ -35,6 +36,8 @@ namespace Crypto
 
             }*/
         }
+
+      
     }
 
 
