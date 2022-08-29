@@ -15,19 +15,19 @@
 
         <TextBlock Name="TitleTextBlock" 
                        FontSize="28" FontWeight="ExtraBold"  Margin="80,5,350,180" Text="About Crypto" />
-        
-        <TextBlock Name="about_all" 
-                       FontSize="20" Margin="80,55" 
-                   Text="    Hello, welcome to Crypto. This program will help you in browsing, converting cryptocurrencies, and much more. At the moment, you are on the About Crypto page and I am showing you the TOP 10 most popular cryptocurrencies as an example. To view other functions, open the menu on the left side" TextWrapping="Wrap"
-                   />
-        
 
+        
+        <TextBlock Name="about_all" FontWeight="Light"
+                       FontSize="24" Margin="80,55" 
+                   Text="Hello, welcome to Crypto. This program will help you in browsing, converting cryptocurrencies, and much more. At the moment, you are on the About Crypto page and I am showing you the TOP 10 most popular cryptocurrencies as an example. To view other functions, open the menu on the left side" TextWrapping="Wrap"/>
+        
+        
         <TextBlock Name="Top10_Crypto" 
                     FontSize="20" Text="TOP 10 Cryptocoin" FontWeight="ExtraBold"
-                    Margin="80,200"
-         />
+                    Margin="80,210"/>
 
-        <ScrollViewer HorizontalScrollMode="Disabled" VerticalScrollMode="Disabled" ZoomMode="Disabled" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
+        
+        <ScrollViewer HorizontalScrollMode="Disabled" VerticalScrollMode="Disabled" ZoomMode="Disabled" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" FontWeight="Light" FontSize="17">
             <StackPanel x:Name="coinsTopPanel" Width="1000" Height="500" Spacing="10" Margin="80,250,800,400"/>
         </ScrollViewer>
 
@@ -39,28 +39,27 @@
             
         </RelativePanel>
 
-
-
-
-        <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="200">
+        
+        <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="140">
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
                     <ListBoxItem Name="about_crypto">
-                        <TextBlock FontSize="24" Text="ABOUT CRYPTO"/>
+                        <TextBlock FontSize="14" FontWeight="Bold"   Text="ABOUT CRYPTO"/>
                     </ListBoxItem>
                     <ListBoxItem Name="convert">
-                        <TextBlock FontSize="24" Text="CONVERT" />
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="CONVERT" />
                     </ListBoxItem>
                     <ListBoxItem Name="detailed_view">
-                        <TextBlock FontSize="24" Text="DETAILED VIEW" />
+                        <TextBlock FontSize="14" FontWeight="Bold"  Text="DETAILED VIEW" />
                     </ListBoxItem>
-                    <ListBoxItem Name="setting">
-                        <TextBlock FontSize="24" Text="SETTING"/>
+                    <ListBoxItem Name="setting_view">
+                        <TextBlock FontSize="14" FontWeight="Bold"  Text="SETTING"/>
                     </ListBoxItem>
+                    <!--<ListBoxItem Name="about_me">
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="ABOUT" Margin="0,400"/>
+                    </ListBoxItem>-->
                 </ListBox>
             </SplitView.Pane>
-
-
             <SplitView.Content>
                 <Frame Name="myFrame"/>
             </SplitView.Content>

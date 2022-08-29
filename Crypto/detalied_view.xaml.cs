@@ -13,18 +13,41 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Crypto
 {
-    /// <summary>
-    /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
-    /// </summary>
+
     public sealed partial class detalied_view : Page
     {
         public detalied_view()
         {
             this.InitializeComponent();
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
+            if (about_crypto.IsSelected)
+            {
+                _ = FrameDetalied.Navigate(typeof(MainPage));
+            }
+            else if (convert.IsSelected)
+            {
+                _ = FrameDetalied.Navigate(typeof(Okno));
+            }
+            else if (setting_view.IsSelected)
+            {
+                _ = FrameDetalied.Navigate(typeof(setting));
+            }
+            else if (detailed_view.IsSelected)
+            {
+                _ = FrameDetalied.Navigate(typeof(detalied_view));
+            }
+        }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
         }
     }
 }

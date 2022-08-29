@@ -51,13 +51,11 @@ namespace Crypto
             {
                 TextBlock coinInfo = new TextBlock()
                 {
-                    Text = $"{number++}.{_cryptoCoinList[i]}"
-
+                    Text = $"{number++}. {_cryptoCoinList[i]}"
                 };
                 coinsTopPanel.Children.Add(coinInfo);
             }
         }
-
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
@@ -66,20 +64,25 @@ namespace Crypto
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
             if (about_crypto.IsSelected)
             {
                 _ = myFrame.Navigate(typeof(MainPage));
+               
             }
-            else if (convert.IsSelected)
+            else if(convert.IsSelected)
             {
                 _ = myFrame.Navigate(typeof(Okno));
-            }
-            /*else if ()
+            }  
+            else if(detailed_view.IsSelected)
             {
-
-            }*/
+                _ = myFrame.Navigate(typeof(detalied_view));
+            }
+            else if(setting_view.IsSelected)
+            {
+                _ = myFrame.Navigate(typeof(setting));
+            }
+       
         }
     }
-
-
 }

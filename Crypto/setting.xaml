@@ -8,7 +8,44 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Name="TitleTextSetting" 
+                       FontSize="28" FontWeight="ExtraBold"  Margin="80,5,800,500" Text="Setting" />
+       
+        <RelativePanel>
+            <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
+                    FontFamily="Segoe MDL2 Assets" FontSize="36"
+                    Content="&#xE700;" Click="HamburgerButton_Click"/>
+        </RelativePanel>
+        
+        <TextBlock Name="Theme" 
+                       FontSize="28" FontWeight="Light"  Margin="80,130" Text="Theme:"/>
+        <ToggleSwitch IsOn="True"  VerticalAlignment="Stretch" Margin="250,137"  OnContent="Dark" OffContent="Light" Width="944" />
+        <TextBlock x:Name="Language" FontSize="28" FontWeight="Light" Margin="80,220" Text="Language:"/>
+        <ToggleSwitch IsOn="True" VerticalAlignment="Stretch" Margin="250,226" OnContent="English" OffContent="Українська" Width="944"/>
+        <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="140">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
+                    <ListBoxItem Name="about_crypto">
+                        <TextBlock FontSize="14" FontWeight="Bold"   Text="ABOUT CRYPTO"/>
+                    </ListBoxItem>
+                    <ListBoxItem Name="convert">
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="CONVERT" />
+                    </ListBoxItem>
+                    <ListBoxItem Name="detailed_view">
+                        <TextBlock FontSize="14" FontWeight="Bold"  Text="DETAILED VIEW" />
+                    </ListBoxItem>
+                    <ListBoxItem Name="setting_view">
+                        <TextBlock FontSize="14" FontWeight="Bold"  Text="SETTING"/>
+                    </ListBoxItem>
 
+                </ListBox>
+            </SplitView.Pane>
+
+
+            <SplitView.Content>
+                <Frame Name="FrameSetting"/>
+            </SplitView.Content>
+        </SplitView>
     </Grid>
 </Page>

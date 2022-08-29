@@ -8,7 +8,39 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Name="TitleTextSetting" 
+                       FontSize="28" FontWeight="ExtraBold"  Margin="80,5,350,180" Text="Detalied View" />
 
+        <RelativePanel>
+            <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
+                    FontFamily="Segoe MDL2 Assets" FontSize="36"
+                    Content="&#xE700;" Click="HamburgerButton_Click"/>
+
+        </RelativePanel>
+
+        <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="140">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
+                    <ListBoxItem Name="about_crypto">
+                        <TextBlock FontSize="14" FontWeight="Bold"   Text="ABOUT CRYPTO"/>
+                    </ListBoxItem>
+                    <ListBoxItem Name="convert">
+                        <TextBlock FontSize="14" FontWeight="Bold" Text="CONVERT" />
+                    </ListBoxItem>
+                    <ListBoxItem Name="detailed_view">
+                        <TextBlock FontSize="14" FontWeight="Bold"  Text="DETAILED VIEW" />
+                    </ListBoxItem>
+                    <ListBoxItem Name="setting_view">
+                        <TextBlock FontSize="14" FontWeight="Bold"  Text="SETTING"/>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+
+
+            <SplitView.Content>
+                <Frame Name="FrameDetalied"/>
+            </SplitView.Content>
+        </SplitView>
     </Grid>
 </Page>
