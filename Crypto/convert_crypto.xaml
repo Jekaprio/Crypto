@@ -1,5 +1,5 @@
-﻿<Page 
-    x:Class="Crypto.MainPage"
+﻿<Page
+    x:Class="Crypto.Okno"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Crypto"
@@ -10,39 +10,13 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         
-        <TextBlock x:Name="errorText" Foreground="Red" TextAlignment="Center" VerticalAlignment="Center">
-        </TextBlock>
-
-        <TextBlock Name="TitleTextBlock" 
-                       FontSize="28" FontWeight="Bold"  Margin="80,5,350,180" Text="About Crypto" />
-        
-        <TextBlock Name="about_all" 
-                       FontSize="20" Margin="80,55" 
-                   Text="    Hello, welcome to Crypto. This program will help you in browsing, converting cryptocurrencies, and much more. At the moment, you are on the About Crypto page and I am showing you the TOP 10 most popular cryptocurrencies as an example. To view other functions, open the menu on the left side" TextWrapping="Wrap"
-                   />
-        
-
-        <TextBlock Name="Top10_Crypto" 
-                    FontSize="20" Text="TOP 10 Cryptocoin" FontWeight="Bold"
-                    Margin="80,200"
-         />
-
-        <ScrollViewer HorizontalScrollMode="Disabled" VerticalScrollMode="Disabled" ZoomMode="Disabled" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
-            <StackPanel x:Name="coinsTopPanel" Width="1000" Height="500" Spacing="10" Margin="80,250,800,400"/>
-        </ScrollViewer>
-
-
         <RelativePanel>
             <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets" FontSize="36"
                     Content="&#xE700;" Click="HamburgerButton_Click"/>
-            
         </RelativePanel>
 
-       
-            
-
-        <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="200">
+        <SplitView Name="mySplitView" Grid.Row="1" OpenPaneLength="200">
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
                     <ListBoxItem Name="about_crypto">
@@ -62,9 +36,9 @@
 
 
             <SplitView.Content>
-                <Frame Name="myFrame"/>
+                <Frame Name="Frame_Convert" />
             </SplitView.Content>
+
         </SplitView>
-        <DatePicker Height="0" Margin="679,813,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

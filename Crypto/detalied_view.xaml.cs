@@ -13,19 +13,18 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+// Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Crypto
 {
-  
-    public sealed partial class Okno : Page
+    /// <summary>
+    /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
+    /// </summary>
+    public sealed partial class detalied_view : Page
     {
-        public Okno()
+        public detalied_view()
         {
             this.InitializeComponent();
         }
-      
-
     }
-  
 }
-

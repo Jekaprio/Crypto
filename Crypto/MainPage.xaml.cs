@@ -39,12 +39,13 @@ namespace Crypto
         private void sortCoinList()
         {
             Array.Sort(_cryptoCoinList,
-                      delegate (CryptoCoinData x, CryptoCoinData y) { return x.rank.CompareTo(y.rank); });
+                      delegate (CryptoCoinData x, CryptoCoinData y) 
+                      { return x.rank.CompareTo(y.rank);});
         }
-
+      
         private void showCoinsTop()
         {
-            int number = 1;   
+            int number = 1;
             int topLength = 10;
             if (_cryptoCoinList.Length < 10)
             {
@@ -54,17 +55,13 @@ namespace Crypto
             {
                 TextBlock coinInfo = new TextBlock()
                 {
-                    Text = ($"{number++}.{_cryptoCoinList[i].name}")
-                    
+                    Text = $"{number++}.{_cryptoCoinList[i].name}"
+
                 };
                 coinsTopPanel.Children.Add(coinInfo);
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
@@ -73,19 +70,18 @@ namespace Crypto
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (home.IsSelected)
+            if (about_crypto.IsSelected)
             {
                 _ = myFrame.Navigate(typeof(MainPage));
-                TitleTextBlock.Text = "Home";
             }
-            /* else if ()
-             {
+            else if (convert.IsSelected)
+            {
+                _ = myFrame.Navigate(typeof(Okno));
+            }
+            /*else if ()
+            {
 
-             }
-             else if ()
-             {
-
-             }*/
+            }*/
         }
     }
 
