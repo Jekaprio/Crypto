@@ -23,7 +23,6 @@
         <ToggleSwitch x:Name="Theme_Toggled"  Toggled="ToggleSwitch_Toggled_1" VerticalAlignment="Stretch" Margin="250,137"  OnContent="Light" OffContent="Dark" Width="944" />
         <TextBlock x:Name="Language" FontSize="28" FontWeight="Light" Margin="80,220" Text="Language:"/>
         <ToggleSwitch x:Name="Language_Toggle" Toggled="ToggleSwitch_Toggled" VerticalAlignment="Stretch" Margin="250,226" OnContent="Enlglish" OffContent="Українська" Width="944"/>
-        <Button Name="but_1" Width="100" Height="40" Background="LightBlue" Content="Save" HorizontalAlignment="Center" />
         <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="140">
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
