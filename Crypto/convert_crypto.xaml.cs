@@ -28,7 +28,7 @@ namespace Crypto
             {
                 _ = Frame_Convert.Navigate(typeof(Okno));
             }
-            else if(detailed_view.IsSelected)
+            else if (detailed_view.IsSelected)
             {
                 _ = Frame_Convert.Navigate(typeof(detalied_view));
             }

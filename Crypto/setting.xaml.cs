@@ -1,30 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using System.Diagnostics;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
-// Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Crypto
 {
-    /// <summary>
-    /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
-    /// </summary>
+
     public sealed partial class setting : Page
     {
         public setting()
         {
-            this.InitializeComponent();
+
+            InitializeComponent();
+
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
@@ -43,7 +32,7 @@ namespace Crypto
             {
                 _ = FrameSetting.Navigate(typeof(Okno));
             }
-            else if(detailed_view.IsSelected)
+            else if (detailed_view.IsSelected)
             {
                 _ = FrameSetting.Navigate(typeof(detalied_view));
             }
@@ -53,6 +42,49 @@ namespace Crypto
             }
         }
 
+        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (sender is ToggleSwitch toggleSwitch)
+            {
+                if (toggleSwitch.IsOn == false)
+                {
+                    MessageDialog dialog = new MessageDialog("Enlgish");
+                    _ = dialog.ShowAsync();
+
+                }
+                else if (toggleSwitch.IsOn == true)
+                {
+                    MessageDialog dialog = new MessageDialog("Українська");
+                    _ = dialog.ShowAsync();
+                }
+            }
+
+        }
+
+        private void ToggleSwitch_Toggled_1(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch toggleSwitch = sender as ToggleSwitch;
+            {
+                if (toggleSwitch.IsOn == false)
+                {
+                    RequestedTheme = ElementTheme.Dark;
+                    MessageDialog dialog = new MessageDialog("Change to Dark");
+                    _ = dialog.ShowAsync();
+                   
+
+                }
+                else if (toggleSwitch.IsOn == true)
+                {
+                    RequestedTheme = ElementTheme.Light;
+                    MessageDialog dialog = new MessageDialog("Change to Light");
+                    _ = dialog.ShowAsync();
+                }
+            }
+
+
+        }
+
       
     }
 }
+
