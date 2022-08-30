@@ -22,7 +22,7 @@
         <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="140">
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
-                    <ListBoxItem Name="about_crypto">
+                    <ListBoxItem  Name="about_crypto">
                         <TextBlock FontSize="14" FontWeight="Bold"   Text="ABOUT CRYPTO"/>
                     </ListBoxItem>
                     <ListBoxItem Name="convert">

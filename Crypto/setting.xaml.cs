@@ -2,7 +2,12 @@
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-
+using Windows.Globalization;
+using System.Threading;
+using System.Threading.Tasks;
+using Abp.Localization;
+using System;
+using Windows.UI.Xaml.Navigation;
 
 namespace Crypto
 {
@@ -14,7 +19,9 @@ namespace Crypto
 
             InitializeComponent();
 
+
         }
+
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
@@ -42,24 +49,10 @@ namespace Crypto
             }
         }
 
-        private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
-        {
-            if (sender is ToggleSwitch toggleSwitch)
-            {
-                if (toggleSwitch.IsOn == false)
-                {
-                    MessageDialog dialog = new MessageDialog("Enlgish");
-                    _ = dialog.ShowAsync();
+        
+      
 
-                }
-                else if (toggleSwitch.IsOn == true)
-                {
-                    MessageDialog dialog = new MessageDialog("Українська");
-                    _ = dialog.ShowAsync();
-                }
-            }
-
-        }
+       
 
         private void ToggleSwitch_Toggled_1(object sender, RoutedEventArgs e)
         {
@@ -68,16 +61,13 @@ namespace Crypto
                 if (toggleSwitch.IsOn == false)
                 {
                     RequestedTheme = ElementTheme.Dark;
-                    MessageDialog dialog = new MessageDialog("Change to Dark");
-                    _ = dialog.ShowAsync();
-                   
+                    
 
                 }
                 else if (toggleSwitch.IsOn == true)
                 {
                     RequestedTheme = ElementTheme.Light;
-                    MessageDialog dialog = new MessageDialog("Change to Light");
-                    _ = dialog.ShowAsync();
+                   
                 }
             }
 

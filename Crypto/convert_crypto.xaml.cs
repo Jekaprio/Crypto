@@ -1,4 +1,8 @@
-﻿using Windows.UI.Xaml;
+﻿using Crypto.model;
+using Crypto.services;
+using System;
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 
@@ -7,14 +11,35 @@ namespace Crypto
 
     public sealed partial class Okno : Page
     {
+        private CryptoCoinData[] _cryptoCoinList = Array.Empty<CryptoCoinData>();
+
+        private readonly APIService _APIService = new APIService();
         public Okno()
         {
             InitializeComponent();
+            getCoinList();
         }
+
+       
+
+        private void getCoinList()
+        {
+            
+         _cryptoCoinList = _APIService.getCoinList();
+
+
+            crypto_list1.ItemsSource = _cryptoCoinList;
+
+            crypto_list2.ItemsSource = _cryptoCoinList;
+
+            
+        }
+       
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
             mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
+            
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

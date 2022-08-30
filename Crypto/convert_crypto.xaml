@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -13,18 +14,17 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Name="TitleTextConvert" 
+        <TextBlock  Name="TitleTextConvert" 
                        FontSize="28" FontWeight="ExtraBlack"  Margin="80,5,350,180" Text="Convert" />
 
         <TextBlock Name="about_Convert" 
                        FontSize="25" Margin="80,55,80,55" TextWrapping="Wrap" FontWeight="Light"
                    Text="Hello! Welcome to the page of conversion of various cryptocurrencies. To convert, select cryptocurrency 1 and cryptocurrency 2 and click convert.
                    *note that the commission is not taken into account."/>
+        <ComboBox x:Name="crypto_list1"  Header="Select first coin"  Margin="80,250,0,0" HorizontalAlignment="Left" FontWeight="Bold"/>
+        <ComboBox  x:Name="crypto_list2" Header="Select second coin"  Margin="0,250,125,0" HorizontalAlignment="Right" FontWeight="Bold"/>
 
-        <ComboBox x:Name="crypto_list1"  Header="Select first coin"  Margin="80,250,0,0" HorizontalAlignment="Left" FontWeight="Bold">
-        </ComboBox>
-        <ComboBox x:Name="crypto_list2" Header="Select second coin"  Margin="0,250,125,0" HorizontalAlignment="Right" FontWeight="Bold"/>
-
+     
         <RelativePanel>
             <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets" FontSize="36"
@@ -34,17 +34,17 @@
         <SplitView Name="mySplitView" OpenPaneLength="140">
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
-                    <ListBoxItem Name="about_crypto">
+                    <ListBoxItem  Name="about_crypto">
                         <TextBlock FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="ABOUT CRYPTO"/>
                     </ListBoxItem>
-                    <ListBoxItem Name="convert">
+                    <ListBoxItem  Name="convert">
                         <TextBlock FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="CONVERT" />
                     </ListBoxItem>
-                    <ListBoxItem Name="detailed_view">
+                    <ListBoxItem  Name="detailed_view">
                         <TextBlock FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="DETAILED VIEW" />
                     </ListBoxItem>
-                    <ListBoxItem Name="setting_view">
-                        <TextBlock FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="SETTING"/>
+                    <ListBoxItem  Name="setting_view">
+                        <TextBlock   FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="SETTING"/>
                     </ListBoxItem>
                 </ListBox>
             </SplitView.Pane>

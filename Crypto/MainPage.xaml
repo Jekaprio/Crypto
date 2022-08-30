@@ -10,19 +10,19 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         
-        <TextBlock x:Name="errorText" Foreground="Red" TextAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBlack">
+        <TextBlock Name="errorText" Foreground="Red" TextAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBlack">
         </TextBlock>
 
-        <TextBlock Name="TitleTextBlock" 
+        <TextBlock x:Uid="TextAbout" Name="TitleTextBlock" 
                        FontSize="28" FontWeight="ExtraBold"  Margin="80,5,350,180" Text="About Crypto" />
 
         
-        <TextBlock Name="about_all" FontWeight="Light"
+        <TextBlock x:Uid="AllAbout" Name="about_all" FontWeight="Light"
                        FontSize="24" Margin="80,55" 
                    Text="Hello, welcome to Crypto. This program will help you in browsing, converting cryptocurrencies, and much more. At the moment, you are on the About Crypto page and I am showing you the TOP 10 most popular cryptocurrencies as an example. To view other functions, open the menu on the left side" TextWrapping="Wrap"/>
         
         
-        <TextBlock Name="Top10_Crypto" 
+        <TextBlock x:Uid="10COIN" Name="Top10_Crypto" 
                     FontSize="20" Text="TOP 10 Cryptocoin" FontWeight="ExtraBold"
                     Margin="80,210"/>
 
@@ -44,16 +44,16 @@
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
                     <ListBoxItem Name="about_crypto">
-                        <TextBlock FontSize="14" FontWeight="Bold"   Text="ABOUT CRYPTO"/>
+                        <TextBlock   x:Uid="about"  FontSize="14" FontWeight="Bold"   Text="ABOUT CRYPTO"/>
                     </ListBoxItem>
-                    <ListBoxItem Name="convert">
-                        <TextBlock FontSize="14" FontWeight="Bold" Text="CONVERT" />
+                    <ListBoxItem  Name="convert">
+                        <TextBlock x:Uid="aboutconvert" FontSize="14" FontWeight="Bold" Text="CONVERT" />
                     </ListBoxItem>
                     <ListBoxItem Name="detailed_view">
-                        <TextBlock FontSize="14" FontWeight="Bold"  Text="DETAILED VIEW" />
+                        <TextBlock x:Uid="aboutdetalied" FontSize="14" FontWeight="Bold"  Text="DETAILED VIEW" />
                     </ListBoxItem>
                     <ListBoxItem Name="setting_view">
-                        <TextBlock FontSize="14" FontWeight="Bold"  Text="SETTING"/>
+                        <TextBlock x:Uid="aboutsetting" FontSize="14" FontWeight="Bold"  Text="SETTING"/>
                     </ListBoxItem>
                     <!--<ListBoxItem Name="about_me">
                         <TextBlock FontSize="14" FontWeight="Bold" Text="ABOUT" Margin="0,400"/>
