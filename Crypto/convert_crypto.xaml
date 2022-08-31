@@ -21,10 +21,12 @@
                        FontSize="25" Margin="80,55,80,55" TextWrapping="Wrap" FontWeight="Light"
                    Text="Hello! Welcome to the page of conversion of various cryptocurrencies. To convert, select cryptocurrency 1 and cryptocurrency 2 and click convert.
                    *note that the commission is not taken into account."/>
-        <ComboBox x:Name="crypto_list1"  Header="Select first coin"  Margin="80,250,0,0" HorizontalAlignment="Left" FontWeight="Bold"/>
-        <ComboBox  x:Name="crypto_list2" Header="Select second coin"  Margin="0,250,125,0" HorizontalAlignment="Right" FontWeight="Bold"/>
-
-     
+        <ComboBox x:Name="crypto_list1"  Header="Select first coin"  Margin="80,250,0,0" HorizontalAlignment="Left" FontWeight="Light"/>
+        <ComboBox  x:Name="crypto_list2"  Header="Select second coin"  Margin="0,250,125,0" HorizontalAlignment="Right" FontWeight="Light"/>
+        <TextBox Name="QuantityList"  Header="Quantity" FontSize="15" FontWeight="Light"
+        FontStretch="Normal" FontStyle="Normal"  MaxWidth="98" MaxHeight="55" Width="155" Margin="-30,240,0,266" TextAlignment="Center"/>
+        <Button Click="Convert_Click" Name="Convert" Content="Convert"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="149" Margin="457,350,450,50" MaxWidth="98" FontWeight="Light" MaxHeight="35"/>
+        <TextBlock Name="Finish" FontSize="15" FontStyle="Normal" HorizontalAlignment="Center"  Margin="200,400,1,150"  VerticalAlignment="Bottom" Text="Your: {quantity1} {name first coin} = {quantity2}{name second coin}" Width="597" />
         <RelativePanel>
             <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets" FontSize="36"

@@ -9,8 +9,23 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Name="TitleTextSetting" 
+        <TextBlock Name="TitleTextDetalied" 
                        FontSize="28" FontWeight="ExtraBold"  Margin="80,5,350,180" Text="Detalied View" />
+        <ComboBox Name="searchCoin" FontWeight="Light" IsEditable="True" SelectedIndex="0" SelectionChanged="searchCoin_SelectionChanged"  Margin="70,100,565,0"  PlaceholderText="Name: " Width="300" Background="Transparent" BorderBrush="Transparent" />
+
+        <TextBlock Name="Price" Text="Price: " Margin="82,150,565,0" FontWeight="Light" />
+        <TextBlock Name="Enter_price" Text="450" FontWeight="Light" Margin="130,151,565,0"/>
+
+
+        <TextBlock Name="Amount" Text="Amount: " Margin="82,195,565,0" FontWeight="Light"/>
+        <TextBlock Name="Enter_amount" Text="5551126" Margin="150,196,565,0" FontWeight="Light"/>
+
+
+        <TextBlock Name="Change_price24h" Text="Price change 24h: " FontWeight="Light" Margin="82,240,565,0"/>
+        <TextBlock Name="Enter_change" Text="-0.558" FontWeight="Light" Margin="200,240,565,0"/>
+
+        <TextBlock Name="Buyin" Text="Can be purchased at: " FontWeight="Light" Margin="82,290,565,0" />
+        <TextBlock Name="Enter_buyin" Text="Markets: " FontWeight="Light" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <RelativePanel>
             <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"

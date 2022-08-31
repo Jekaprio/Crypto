@@ -1,7 +1,6 @@
 ﻿using Crypto.model;
 using Crypto.services;
 using System;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -18,28 +17,23 @@ namespace Crypto
         {
             InitializeComponent();
             getCoinList();
+
+            crypto_list1.ItemsSource = _cryptoCoinList;
+            crypto_list2.ItemsSource = _cryptoCoinList;
         }
 
-       
+
 
         private void getCoinList()
         {
-            
-         _cryptoCoinList = _APIService.getCoinList();
-
-
-            crypto_list1.ItemsSource = _cryptoCoinList;
-
-            crypto_list2.ItemsSource = _cryptoCoinList;
-
-            
+            _cryptoCoinList = _APIService.getCoinList();
         }
-       
+
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
             mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
-            
+
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -61,6 +55,24 @@ namespace Crypto
             {
                 _ = Frame_Convert.Navigate(typeof(setting));
             }
+        }
+
+        private void Convert_Click(object sender, RoutedEventArgs e)
+        {
+            getCoinList();
+            CryptoCoinData selectedCoin = this._cryptoCoinList[crypto_list1.SelectedIndex];
+            CryptoCoinData selectedCoin2 = this._cryptoCoinList[crypto_list2.SelectedIndex];
+            float quantity = float.Parse(QuantityList.Text.ToString());
+            float result = this.convertCoin(selectedCoin.name, selectedCoin2.name, quantity);
+            Finish.Text = result.ToString();
+        }
+
+        private float convertCoin(string coinName, string secondCoinName, float number)
+        {
+            float coinUsdPrice = Array.Find(_cryptoCoinList, item => item.name == coinName).priceUsd;
+            float secondCoinUsdPrice = Array.Find(_cryptoCoinList, item => item.name == secondCoinName).priceUsd;
+            float coinFullPrice = coinUsdPrice * number;
+            return coinFullPrice / secondCoinUsdPrice;
         }
     }
 }
