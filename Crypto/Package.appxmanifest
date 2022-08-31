@@ -8,8 +8,8 @@
 
   <Identity
     Name="ecd301ec-25e4-4339-a2f3-b909aeb097da"
-    Publisher="CN=vdfvf"
-    Version="1.0.0.0" />
+    Publisher="CN=JEKAPRIO"
+    Version="1.0.1.0" />
 
   <mp:PhoneIdentity PhoneProductId="ecd301ec-25e4-4339-a2f3-b909aeb097da" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
