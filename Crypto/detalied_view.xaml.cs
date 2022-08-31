@@ -65,7 +65,7 @@ namespace Crypto
             MarketsData.MarketData[] coinMarkets = _APIService.getMarketsList(coinData.id);
 
             string marketsList = "";
-            // Make this because for BTC Zaif(Markets) returns > 1 time
+            // Make this because for BTC Zaif(Markets) returns > 1 times
             int k = 5;
             for (int j = 0; j < k; j++)
             {
