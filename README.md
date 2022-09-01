@@ -17,7 +17,7 @@
 
 </p>
 
-## Опис // Description
+## Опис [Description]
 
 <p align="center">
 
