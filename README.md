@@ -17,14 +17,15 @@
 
 </p>
 
-## Опис
+## Опис // Description
 
 <p align="center">
 
-Crypto був створений для виконання різних задач. Ця програма допоможе вам в конвертації криптовалют, детального пеерегляду про криптовалюту, а також можливістю пошуку. Розроблено за допомогою C# і UWP, також був використаний пакет із NuGet під назвою RestSharp.
+Crypto був створений для виконання різних задач. Ця програма допоможе вам в конвертації криптовалют, детального пеерегляду про криптовалюту, а також можливістю пошуку. Розроблено за допомогою C# і UWP, також був використаний пакет із NuGet під назвою RestSharp. 
+//
+Crypto was created to perform various tasks. This program will help you in the conversion of cryptocurrencies, a detailed review about cryptocurrency, as well as the ability to search. Developed using C# and UWP, also used a package from NuGet called RestSharp.
   
-  
-## Функції 
+## Функції // Functions
   
   
 
