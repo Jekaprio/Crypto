@@ -27,6 +27,9 @@ Crypto was created to perform various tasks. This program will help you in the c
   
 ## Функції [Functions]
   
+В цьому додатку багато функцій про які я зараз вам розповім. 
+  
+  ## Головна сторінка
   
 
 
