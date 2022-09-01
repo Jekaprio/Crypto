@@ -16,10 +16,7 @@ namespace Crypto
     {
         public setting()
         {
-
             InitializeComponent();
-
-
         }
 
 
@@ -49,11 +46,6 @@ namespace Crypto
             }
         }
 
-        
-      
-
-       
-
         private void ToggleSwitch_Toggled_1(object sender, RoutedEventArgs e)
         {
             ToggleSwitch toggleSwitch = sender as ToggleSwitch;
@@ -61,20 +53,13 @@ namespace Crypto
                 if (toggleSwitch.IsOn == false)
                 {
                     RequestedTheme = ElementTheme.Dark;
-                    
-
                 }
                 else if (toggleSwitch.IsOn == true)
                 {
                     RequestedTheme = ElementTheme.Light;
-                   
                 }
             }
-
-
         }
-
-      
     }
 }
 

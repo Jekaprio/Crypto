@@ -45,6 +45,7 @@ namespace Crypto.services
             catch (Exception)
             {
                 throw new Exception("Error initialization: Check your the Internet connection");
+                
             }
         }
     }

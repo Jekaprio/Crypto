@@ -23,10 +23,15 @@ namespace Crypto
 
         private void getCoinList()
         {
-            _cryptoCoinList = _APIService.getCoinList();
+            try
+            {
+                _cryptoCoinList = _APIService.getCoinList();
+            }
+            catch (Exception e)
+            {
+                errorText.Text = e.Message;
+            }
         }
-
-
 
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -63,10 +68,10 @@ namespace Crypto
             Enter_amount.Text = coinData.supply.ToString("0.00");
             Enter_change.Text = coinData.changePercent24Hr.ToString();
             MarketsData.MarketData[] coinMarkets = _APIService.getMarketsList(coinData.id);
-
             string marketsList = "";
+
             // Make this because for BTC Zaif(Markets) returns > 1 times
-            int k = 5;
+            int k = 6;
             for (int j = 0; j < k; j++)
             {
                 MarketsData.MarketData i = coinMarkets[j];

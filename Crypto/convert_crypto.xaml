@@ -10,45 +10,76 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
-        <TextBlock  Name="TitleTextConvert" 
+        
+        
+        <TextBlock Name="errorText" 
+                   Foreground="Red" TextAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBlack"/>
+        
+        
+        <TextBlock x:Uid="ConvertTitle" Name="TitleTextConvert" 
                        FontSize="28" FontWeight="ExtraBlack"  Margin="80,5,350,180" Text="Convert" />
 
-        <TextBlock Name="about_Convert" 
-                       FontSize="25" Margin="80,55,80,55" TextWrapping="Wrap" FontWeight="Light"
-                   Text="Hello! Welcome to the page of conversion of various cryptocurrencies. To convert, select cryptocurrency 1 and cryptocurrency 2 and click convert.
-                   *note that the commission is not taken into account."/>
-        <ComboBox x:Name="crypto_list1"  Header="Select first coin"  Margin="80,250,0,0" HorizontalAlignment="Left" FontWeight="Light"/>
-        <ComboBox  x:Name="crypto_list2"  Header="Select second coin"  Margin="0,250,125,0" HorizontalAlignment="Right" FontWeight="Light"/>
-        <TextBox Name="QuantityList"  Header="Quantity" FontSize="15" FontWeight="Light"
-        FontStretch="Normal" FontStyle="Normal"  MaxWidth="98" MaxHeight="55" Width="155" Margin="-30,240,0,266" TextAlignment="Center"/>
-        <Button Click="Convert_Click" Name="Convert" Content="Convert"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="149" Margin="457,350,450,50" MaxWidth="98" FontWeight="Light" MaxHeight="35"/>
-        <TextBlock Name="Finish" FontSize="15" FontStyle="Normal" HorizontalAlignment="Center"  Margin="200,400,1,150"  VerticalAlignment="Bottom" Text="Your: {quantity1} {name first coin} = {quantity2}{name second coin}" Width="597" />
+        
+        <TextBlock Name="about_Convert" x:Uid="ConvertAbout"
+                   FontSize="25" Margin="80,55,80,55" TextWrapping="Wrap" FontWeight="Light"
+                   Text="Hello! Welcome to the page of conversion of various cryptocurrencies. To convert, select cryptocurrency 1 and cryptocurrency 2 and click convert."/>
+
+        
+        <TextBlock x:Name="commission" x:Uid="comision"  
+                   FontSize="20" TextWrapping="Wrap" Margin="80,150,90,100" FontWeight="Bold"/>
+
+        
+        <ComboBox  x:Name="crypto_list1" x:Uid="FirstCoin" 
+                   Header="Select first coin" Width="350" Margin="80,200,0,0" FontSize="20" HorizontalAlignment="Left" FontWeight="Light"/>
+       
+        
+        <ComboBox  x:Name="crypto_list2" x:Uid="SecondCoin" 
+                   Header="Select second coin" Width="350" Margin="80,300,80,0" FontSize="20" HorizontalAlignment="Left" FontWeight="Light"/>
+       
+        
+        <TextBox   Name="QuantityList" x:Uid="Quanti"  
+                   Header="Quantity" FontSize="20" TextAlignment="Center" FontWeight="Light"
+                   FontStretch="Normal" FontStyle="Normal" Width="350" MaxHeight="70" Margin="80,150,0,90" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+       
+        
+        <Button    Click="Convert_Click" x:Uid="ConverterButton" Name="Convert" 
+                   FontSize="20" Content="Convert"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="170,250,450,20" Width="150" FontWeight="Light" MaxHeight="55"/>
+       
+        
+        <TextBlock Name="Finish"  
+                   FontSize="20" FontStyle="Normal"  Margin="80,395,0,160"  VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
+        
+        
         <RelativePanel>
             <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets" FontSize="36"
                     Content="&#xE700;" Click="HamburgerButton_Click"/>
         </RelativePanel>
 
-        <SplitView Name="mySplitView" OpenPaneLength="140">
+        
+        <SplitView Name="mySplitView" OpenPaneLength="145">
+            
             <SplitView.Pane>
+                
                 <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
                     <ListBoxItem  Name="about_crypto">
-                        <TextBlock FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="ABOUT CRYPTO"/>
+                        <TextBlock x:Uid="about" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="ABOUT CRYPTO"/>
                     </ListBoxItem>
                     <ListBoxItem  Name="convert">
-                        <TextBlock FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="CONVERT" />
+                        <TextBlock x:Uid="aboutconvert" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="CONVERT" />
                     </ListBoxItem>
                     <ListBoxItem  Name="detailed_view">
-                        <TextBlock FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="DETAILED VIEW" />
+                        <TextBlock x:Uid="aboutdetalied" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="DETAILED VIEW" />
                     </ListBoxItem>
                     <ListBoxItem  Name="setting_view">
-                        <TextBlock   FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="SETTING"/>
+                        <TextBlock  x:Uid="aboutsetting" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Text="SETTING"/>
                     </ListBoxItem>
                 </ListBox>
+                
             </SplitView.Pane>
 
 
@@ -56,6 +87,7 @@
                 <Frame Name="Frame_Convert" />
             </SplitView.Content>
 
+            
         </SplitView>
     </Grid>
 </Page>

@@ -9,22 +9,24 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
-        <TextBlock Name="errorText" Foreground="Red" TextAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBlack">
-        </TextBlock>
+
+
+        <TextBlock Name="errorText" 
+                   Foreground="Red" TextAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBlack"/>
+
+
 
         <TextBlock x:Uid="TextAbout" Name="TitleTextBlock" 
-                       FontSize="28" FontWeight="ExtraBold"  Margin="80,5,350,180" Text="About Crypto" />
+                   FontSize="28" FontWeight="ExtraBold"  Margin="80,5,350,180" Text="About Crypto" />
 
         
-        <TextBlock x:Uid="AllAbout" Name="about_all" FontWeight="Light"
-                       FontSize="24" Margin="80,55" 
+        <TextBlock x:Uid="AllAbout" Name="about_all" 
+                   FontWeight="Light" FontSize="24" Margin="80,55" 
                    Text="Hello, welcome to Crypto. This program will help you in browsing, converting cryptocurrencies, and much more. At the moment, you are on the About Crypto page and I am showing you the TOP 10 most popular cryptocurrencies as an example. To view other functions, open the menu on the left side" TextWrapping="Wrap"/>
         
         
         <TextBlock x:Uid="10COIN" Name="Top10_Crypto" 
-                    FontSize="20" Text="TOP 10 Cryptocoin" FontWeight="ExtraBold"
-                    Margin="80,210"/>
+                   FontSize="20" Text="TOP 10 Cryptocoin" FontWeight="ExtraBold" Margin="80,210"/>
 
         
         <ScrollViewer HorizontalScrollMode="Disabled" VerticalScrollMode="Disabled" ZoomMode="Disabled" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" FontWeight="Light" FontSize="17">
@@ -36,12 +38,13 @@
             <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets" FontSize="36"
                     Content="&#xE700;" Click="HamburgerButton_Click"/>
-            
         </RelativePanel>
 
         
-        <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="140">
+        <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="145">
+           
             <SplitView.Pane>
+                
                 <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
                     <ListBoxItem Name="about_crypto">
                         <TextBlock   x:Uid="about"  FontSize="14" FontWeight="Bold"   Text="ABOUT CRYPTO"/>
@@ -55,14 +58,16 @@
                     <ListBoxItem Name="setting_view">
                         <TextBlock x:Uid="aboutsetting" FontSize="14" FontWeight="Bold"  Text="SETTING"/>
                     </ListBoxItem>
-                    <!--<ListBoxItem Name="about_me">
-                        <TextBlock FontSize="14" FontWeight="Bold" Text="ABOUT" Margin="0,400"/>
-                    </ListBoxItem>-->
                 </ListBox>
+                
             </SplitView.Pane>
+            
+          
             <SplitView.Content>
                 <Frame Name="myFrame"/>
             </SplitView.Content>
+            
+            
         </SplitView>
     </Grid>
 </Page>

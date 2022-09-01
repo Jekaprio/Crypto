@@ -1,7 +1,6 @@
 ﻿using Crypto.model;
 using Crypto.services;
 using System;
-using System.IO.IsolatedStorage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -63,7 +62,6 @@ namespace Crypto
             mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
         }
 
-
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             mySplitView.IsPaneOpen = !mySplitView.IsPaneOpen;
@@ -84,9 +82,6 @@ namespace Crypto
             {
                 _ = myFrame.Navigate(typeof(setting));
             }
-           
         }
-
-      
     }
 }

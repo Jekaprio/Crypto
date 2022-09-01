@@ -23,10 +23,16 @@ namespace Crypto
         }
 
 
-
         private void getCoinList()
         {
-            _cryptoCoinList = _APIService.getCoinList();
+            try
+            {
+                _cryptoCoinList = _APIService.getCoinList();
+            }
+            catch (Exception e)
+            {
+                errorText.Text = e.Message;
+            }
         }
 
 
@@ -60,11 +66,11 @@ namespace Crypto
         private void Convert_Click(object sender, RoutedEventArgs e)
         {
             getCoinList();
-            CryptoCoinData selectedCoin = this._cryptoCoinList[crypto_list1.SelectedIndex];
-            CryptoCoinData selectedCoin2 = this._cryptoCoinList[crypto_list2.SelectedIndex];
+            CryptoCoinData selectedCoin = _cryptoCoinList[crypto_list1.SelectedIndex];
+            CryptoCoinData selectedCoin2 = _cryptoCoinList[crypto_list2.SelectedIndex];
             float quantity = float.Parse(QuantityList.Text.ToString());
-            float result = this.convertCoin(selectedCoin.name, selectedCoin2.name, quantity);
-            Finish.Text = result.ToString();
+            float result = convertCoin(selectedCoin.name, selectedCoin2.name, quantity);
+            Finish.Text = $"{quantity} {selectedCoin.name} =  {result} {selectedCoin2.name}";
         }
 
         private float convertCoin(string coinName, string secondCoinName, float number)

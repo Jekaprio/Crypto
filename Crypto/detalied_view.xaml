@@ -9,47 +9,71 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Name="TitleTextDetalied" 
+        
+        
+        <TextBlock 
+            Name="errorText" Foreground="Red" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="80,2,100,100" FontWeight="ExtraBlack"/>
+
+       
+        <TextBlock 
+            Name="TitleTextDetalied" x:Uid="TextDetalied"
                        FontSize="28" FontWeight="ExtraBold"  Margin="80,5,350,180" Text="Detalied View" />
-        <ComboBox Name="searchCoin" FontWeight="Light" IsEditable="True" SelectedIndex="0" SelectionChanged="searchCoin_SelectionChanged"  Margin="70,100,565,0"  PlaceholderText="Name: " Width="300" Background="Transparent" BorderBrush="Transparent" />
-
-        <TextBlock Name="Price" Text="Price: " Margin="82,150,565,0" FontWeight="Light" />
-        <TextBlock Name="Enter_price" Text="450" FontWeight="Light" Margin="130,151,565,0"/>
-
-
-        <TextBlock Name="Amount" Text="Amount: " Margin="82,195,565,0" FontWeight="Light"/>
-        <TextBlock Name="Enter_amount" Text="5551126" Margin="150,196,565,0" FontWeight="Light"/>
+       
+        
+        <ComboBox
+            Name="searchCoin" FontSize="20" FontWeight="Light"  IsEditable="True" SelectedIndex="0" SelectionChanged="searchCoin_SelectionChanged"  Margin="70,100,565,0"  PlaceholderText="Name: " Width="410" Background="Transparent" BorderBrush="Transparent" />
 
 
-        <TextBlock Name="Change_price24h" Text="Price change 24h: " FontWeight="Light" Margin="82,240,565,0"/>
-        <TextBlock Name="Enter_change" Text="-0.558" FontWeight="Light" Margin="200,240,565,0"/>
+        <TextBlock
+            Name="Price" x:Uid="PriceText" FontSize="20" Text="Price: " Margin="82,150,565,0" FontWeight="Light" />
+        <TextBlock 
+            Name="Enter_price" Text="450" FontSize="20" FontWeight="Light" Margin="150,151,565,0"/>
 
-        <TextBlock Name="Buyin" Text="Can be purchased at: " FontWeight="Light" Margin="82,290,565,0" />
-        <TextBlock Name="Enter_buyin" Text="Markets: " FontWeight="Light" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
+        <TextBlock 
+            Name="Amount" x:Uid="amoutText" FontSize="20" Text="Amount: " Margin="82,195,565,0" FontWeight="Light"/>
+        <TextBlock 
+            Name="Enter_amount"  FontSize="20" Text="5551126" Margin="170,196,565,0" FontWeight="Light"/>
+
+
+        <TextBlock 
+            Name="Change_price24h" x:Uid="change24" FontSize="20" Text="Price change 24h: " FontWeight="Light" Margin="82,240,565,0"/>
+        <TextBlock 
+            Name="Enter_change" x:Uid="Margins" Text="-0.558" FontSize="20" FontWeight="Light" Margin="250,240,565,0"/>
+
+
+        <TextBlock 
+            Name="Buyin"  x:Uid="purchased" Text="Can be purchased at: " FontSize="20"   FontWeight="Light" Margin="82,290,565,0" />
+        <TextBlock 
+            Name="Enter_buyin" Text="Markets: " FontSize="20" FontWeight="Light"  TextWrapping="Wrap" Margin="280,290,565,0"/>
+
+        
         <RelativePanel>
             <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets" FontSize="36"
                     Content="&#xE700;" Click="HamburgerButton_Click"/>
 
         </RelativePanel>
+        
 
-        <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="140">
+        <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="145">
             <SplitView.Pane>
+                
                 <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
                     <ListBoxItem  Name="about_crypto">
-                        <TextBlock FontSize="14" FontWeight="Bold"   Text="ABOUT CRYPTO"/>
+                        <TextBlock x:Uid="about" FontSize="14" FontWeight="Bold"   Text="ABOUT CRYPTO"/>
                     </ListBoxItem>
                     <ListBoxItem Name="convert">
-                        <TextBlock FontSize="14" FontWeight="Bold" Text="CONVERT" />
+                        <TextBlock x:Uid="aboutconvert" FontSize="14" FontWeight="Bold" Text="CONVERT" />
                     </ListBoxItem>
                     <ListBoxItem Name="detailed_view">
-                        <TextBlock FontSize="14" FontWeight="Bold"  Text="DETAILED VIEW" />
+                        <TextBlock x:Uid="aboutdetalied" FontSize="14" FontWeight="Bold"  Text="DETAILED VIEW" />
                     </ListBoxItem>
                     <ListBoxItem Name="setting_view">
-                        <TextBlock FontSize="14" FontWeight="Bold"  Text="SETTING"/>
+                        <TextBlock x:Uid="aboutsetting" FontSize="14" FontWeight="Bold"  Text="SETTING"/>
                     </ListBoxItem>
                 </ListBox>
+                
             </SplitView.Pane>
 
 

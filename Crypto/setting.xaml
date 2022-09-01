@@ -10,35 +10,42 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        
         <TextBlock x:Uid="TitleSetting" Name="TitleTextSetting"
                        FontSize="28" FontWeight="ExtraBold"  Margin="80,5,500,500" Text="Setting" />
        
+        
         <RelativePanel>
-            <Button  x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
+            <Button x:Name="HamburgerButton" RelativePanel.AlignLeftWithPanel="True"
                     FontFamily="Segoe MDL2 Assets" FontSize="36"
                     Content="&#xE700;" Click="HamburgerButton_Click"/>
         </RelativePanel>
         
-        <TextBlock x:Uid="SetTheme"  Name="Theme" 
-                       FontSize="28" FontWeight="Light"  Margin="80,130" Text="Theme:"/>
         
-        <ToggleSwitch x:Uid="SetThemes" x:Name="Theme_Toggled"  Toggled="ToggleSwitch_Toggled_1" VerticalAlignment="Stretch" Margin="250,137"  OnContent="Light" OffContent="Dark" Width="944" />
+        <TextBlock x:Uid="SetTheme"  Name="Theme" 
+                    FontSize="28" FontWeight="Light"  Margin="80,130" Text="Theme:"/>
+        
+        
+        <ToggleSwitch x:Uid="SetThemes" x:Name="Theme_Toggled"  
+                      Toggled="ToggleSwitch_Toggled_1" VerticalAlignment="Stretch" Margin="250,137"  OnContent="Light" OffContent="Dark" Width="944" />
 
       
-        <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="140">
+        <SplitView Name="mySplitView" DisplayMode="Overlay" Grid.Row="1" OpenPaneLength="145">
             <SplitView.Pane>
+                
                 <ListBox SelectionMode="Single" SelectionChanged="ListBox_SelectionChanged">
                     <ListBoxItem Name="about_crypto">
-                        <TextBlock FontSize="14" FontWeight="Bold"   Text="ABOUT CRYPTO"/>
+                        <TextBlock x:Uid="about" FontSize="14" FontWeight="Bold"   Text="ABOUT CRYPTO"/>
                     </ListBoxItem>
                     <ListBoxItem  Name="convert">
-                        <TextBlock FontSize="14" FontWeight="Bold" Text="CONVERT" />
+                        <TextBlock x:Uid="aboutconvert" FontSize="14" FontWeight="Bold" Text="CONVERT" />
                     </ListBoxItem>
                     <ListBoxItem  Name="detailed_view">
-                        <TextBlock FontSize="14" FontWeight="Bold"  Text="DETAILED VIEW" />
+                        <TextBlock x:Uid="aboutdetalied" FontSize="14" FontWeight="Bold"  Text="DETAILED VIEW" />
                     </ListBoxItem>
                     <ListBoxItem  Name="setting_view">
-                        <TextBlock FontSize="14" FontWeight="Bold"  Text="SETTING"/>
+                        <TextBlock x:Uid="aboutsetting" FontSize="14" FontWeight="Bold"  Text="SETTING"/>
                     </ListBoxItem>
 
                 </ListBox>
