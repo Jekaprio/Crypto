@@ -1,4 +1,4 @@
-<h1 align="center">Crypto<img width="50" src="https://github.com/Jekaprio/Crypto/blob/master/LargeTile.scale-100.png"/>
+<h1 align="center">Crypto<img width="65" src="https://github.com/Jekaprio/Crypto/blob/master/LargeTile.scale-100.png"/>
 </h1>
 <h2 align="center">
 
