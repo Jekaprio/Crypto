@@ -41,6 +41,13 @@ Crypto was created to perform various tasks. This program will help you in the c
 The converter contains a description of how to use the functions of this page. In short: choose coin 1 => choose coin 2 => enter amount => click convert.
 <img src="https://github.com/Jekaprio/Crypto/blob/master/Photo/Convert(EN).png"/>
 
+ <b>Детально[Detalied View]</b> 
+  <p align="left">
+In the detailed view as well as in the converter, but here there is an opportunity to search for a coin. We select a coin and we display its Price, Volume, Price change in 24 hours, In which markets it can be purchased
+<hr>
+The converter contains a description of how to use the functions of this page. In short: choose coin 1 => choose coin 2 => enter amount => click convert.
+<img src="https://github.com/Jekaprio/Crypto/blob/master/Photo/Detalied(En).png"/>
+
 
 
 
