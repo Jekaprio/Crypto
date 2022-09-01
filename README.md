@@ -31,6 +31,7 @@ Crypto was created to perform various tasks. This program will help you in the c
 На головній сторінці відображено напис про цю програму, а також ТОП 10 Криптомонет.
 ________________________________________________________________________________________________________________________________________________
 The main page displays an inscription about this program, as well as TOP 10 Cryptocurrencies
+    <img src="https://ibb.co/gP09Tk6" align="left"/>
     
   
 
