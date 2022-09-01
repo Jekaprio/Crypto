@@ -26,10 +26,12 @@ ________________________________________________________________________________
 Crypto was created to perform various tasks. This program will help you in the conversion of cryptocurrencies, a detailed review about cryptocurrency, as well as the ability to search. Developed using C# and UWP, also used a package from NuGet called RestSharp.
   
 ## Функції [Functions]
-  
-В цьому додатку багато функцій про які я зараз вам розповім. 
-  
-  ## Головна сторінка
+  <b>Головна сторінка[Main Page]</b> 
+  <p align="left">
+На головній сторінці відображено напис про цю програму, а також ТОП 10 Криптомонет.
+________________________________________________________________________________________________________________________________________________
+The main page displays an inscription about this program, as well as TOP 10 Cryptocurrencies
+    
   
 
 
