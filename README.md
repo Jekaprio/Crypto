@@ -1,5 +1,5 @@
-<h1 align="center">Crypto</h1>
-<img src="https://github.com/Jekaprio/Crypto/blob/master/LargeTile.scale-100.png"/>
+<h1 align="center">Crypto<img src="https://github.com/Jekaprio/Crypto/blob/master/LargeTile.scale-100.png"/>
+</h1>
 <h2 align="center">
 
 
