@@ -43,10 +43,24 @@ The converter contains a description of how to use the functions of this page. I
 
  <b>Детально[Detalied View]</b> 
   <p align="left">
-In the detailed view as well as in the converter, but here there is an opportunity to search for a coin. We select a coin and we display its Price, Volume, Price change in 24 hours, In which markets it can be purchased
+В детальному перегляді так само як і в конвертері але тут є можливість пошуку монети. Вибираємо монету і у нас відображається її Ціна, Обсяг, Зміна ціни за 24 години, На яких ринках можна придбати
 <hr>
-The converter contains a description of how to use the functions of this page. In short: choose coin 1 => choose coin 2 => enter amount => click convert.
+In the detailed view as well as in the converter, but here there is an opportunity to search for a coin. We select a coin and we display its Price, Volume, Price change in 24 hours, In which markets it can be purchased.
 <img src="https://github.com/Jekaprio/Crypto/blob/master/Photo/Detalied(En).png"/>
+
+<b>Налаштування[Setting]</b> 
+  <p align="left">
+В налаштування з можливостей є тільки зміна теми
+<hr>
+There is only a theme change in the settings
+<img src="https://github.com/Jekaprio/Crypto/blob/master/Photo/Setting.png"/>
+
+<b>Also, the application has a localization that changes depending on your language in the system (Windows).<b/>
+
+
+
+
+
 
 
 
